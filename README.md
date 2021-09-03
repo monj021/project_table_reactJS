@@ -11,8 +11,7 @@ a table.
 1.3 Built a webpage using using ReactJS to show the
 normalized data in a tabular format. 
 
-1.3.1 When application is loaded on launch, it should make an API request to backend
-requesting ALL the items in a normalized data set. Using fetch call to fetch the data from
+1.3.1 When application is loaded on launch, using fetch call to fetch the data from
 playlist.json and storing it in a two dimensional array called valueArray.
 
 1.3.2 Response received should then be rendered in a tabular view.
