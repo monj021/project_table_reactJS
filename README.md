@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `Features Implemented
 
-1.1. Write a working program that takes the JSON file as input and normalizes it to generate
+1.1. A working program in ReactJS that takes the JSON file as input and normalizes it to generate
 a table.
 
 1.3 Built a webpage using using ReactJS to show the
