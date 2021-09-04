@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TextField from "@material-ui/core/TextField";
@@ -18,7 +19,6 @@ let currentIndex = 0;
 var tableHeaders;
 var tableValues;
 var isSet = false;
-//var valueArray;
 let count = 1;
 
 const pagination = (activePage, setActivePage, valueArray) => {
@@ -39,8 +39,6 @@ const pagination = (activePage, setActivePage, valueArray) => {
 };
 
 function App() {
-  console.log("app load");
-
   const [valueArray, setData] = useState([]);
   const [activePage, setActivePage] = useState();
 
@@ -56,11 +54,9 @@ function App() {
       },
     })
       .then(function(response) {
-        console.log("Response=", response);
         return response.json();
       })
       .then(function(myJson) {
-        console.log("My Json= ", myJson);
         var valueArrayCopy = new Array();
         tableHeaders = Object.keys(myJson);
         tableValues = Object.values(myJson);
@@ -78,10 +74,6 @@ function App() {
     getData();
     setActivePage(1);
   }, []);
-
-  //valueArray = data;
-  console.log("data ", data);
-  console.log("valueArray", valueArray);
 
   let active = 1;
   let items = [];
@@ -127,7 +119,6 @@ function App() {
                       type="button"
                       onClick={() => {
                         const newValueArr = valueArray.sort((a, b) => {
-                          console.log("TYPE ", typeof a[index]);
                           if (typeof a[index] == "number") {
                             return a[index] - b[index];
                           } else {
@@ -136,16 +127,9 @@ function App() {
                             );
                           }
                         });
-                        console.log("New ValueArr", newValueArr);
                         setData(newValueArr);
                         count++;
                         setHook(count);
-
-                        console.log(
-                          "Value Array after updating New ValueArr",
-                          valueArray
-                        );
-                        //App();
                       }}
                     >
                       {header}
